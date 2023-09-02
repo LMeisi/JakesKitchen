@@ -1,0 +1,854 @@
+/* ************************ */
+/* HEADER */
+/* ************************ */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: #fdeee7; */
+
+  height: 9.6rem;
+  padding: 0 4.8rem;
+
+  /* In relation to .main-nav nav bar's absolute position */
+  /* Normally, below doesn't do anything; only when mobile nav applies, below becomes applicable */
+  position: relative;
+
+  /* background-color: #fdeee7; */
+  /* background-image: url(img/front-img-squooshed.jpg); */
+  /* opacity: 0.5; */
+
+  z-index: 999;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 0.4rem;
+}
+
+.logo-img {
+  height: 7.5rem;
+}
+
+.logo-name {
+  height: 3.5rem;
+}
+
+/* ************************ */
+/* NAVIGATION */
+/* ************************ */
+
+/* ul element - set it to be flex container */
+.main-nav-list {
+  display: flex;
+  list-style: none;
+  gap: 3.2rem;
+  align-items: center;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  font-size: 1.8rem;
+
+  transition: all 0.3s;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #bc3604;
+}
+
+.nav-cta:link,
+.nav-cta:visited {
+  padding: 1.2rem 2.4rem;
+  border-radius: 9px;
+  color: #fff;
+  background-color: #eb4305;
+}
+
+.nav-cta:hover,
+.nav-cta:active {
+  background-color: #bc3604;
+}
+
+/* ////////////////////// */
+/* FOR MOBILE */
+
+/* button */
+/* By default, this button should be hidden, only show when viewport is reduced to mobile */
+.btn-mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  display: none;
+}
+
+.icon-mobile-nav {
+  height: 4.8rem;
+  width: 4.8rem;
+  color: #333;
+}
+
+/* Use attribute for CSS selector - The 'close' icon; Not showing by default */
+.icon-mobile-nav[name="close-outline"] {
+  display: none;
+}
+
+/* ////////////////////// */
+/* FOR STICKY NAVIGATION */
+/* 'sticky' class is added to 'body' element using Javascript when front section leaves the viewport */
+/* Below format will be applied to 'header' element when sticky class is added to 'body' element, since every element is a child of body element */
+.sticky .header {
+  /* position fixed: element will always be at fixed position with respect to viewport regardless of how viewport scrolls */
+  /* Fixed means the element is taken out of the flow, so next element takes its original place */
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 8rem; /* set fixed height so in JS intersectionObserver the rootMargin of -80px can be applied*/
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: rgba(255, 255, 255, 0.966);
+  z-index: 99; /* z-index should be Less than mobile button */
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
+}
+
+/* Below format will be applied to 'section-front' element when 'sticky' class is added to 'body' element, since every element is a child of body element */
+/* To ensure smooth appearance of sticky navigation (since header is now fixed so taken out of flow, we need to compensate it by adding margin to the front-section */
+.sticky .section-front {
+  /* Set it as the same value as the header height */
+  margin-top: 9.6rem;
+}
+
+/* ************************ */
+/* FRONT SECTION */
+/* ************************ */
+
+.section-front {
+  padding: 4.8rem 0 9.6rem 0;
+
+  /* background-image: linear-gradient(rgb(46, 18, 2, 0.5), rgb(23, 9, 1, 0.9)),
+    url(img/kitchen-2300px-mozJpeg.jpg); */
+  background-image: url(img/front-img-squooshed-3000-again.jpg);
+
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  /* border-radius: 9px; */
+  box-shadow: 0 2.4rem 4.8rem rgb(0 0 0 / 20%);
+}
+
+.front {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  max-width: 130rem;
+  /* centering the element */
+  margin: 0 auto;
+  padding: 2.4rem 4.8rem;
+}
+
+.front-heading {
+  font-size: 3rem;
+  line-height: 1.4;
+  color: #f9c7b4;
+  opacity: 0.7;
+}
+
+.front-text {
+  text-align: center;
+  font-size: 4.4rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+  color: #fff;
+}
+
+.front-btn-container {
+  margin-top: 1.2rem;
+}
+
+/* ************************ */
+/* FEATURED IN SECTION */
+/* ************************ */
+
+.section-featured {
+  padding: 4.8rem 0 3.2rem 0;
+}
+
+/* "As featured in" */
+.heading-featured-in {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 2.4rem;
+  color: #888;
+}
+
+/* logo container */
+.featured-logos {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* logos */
+.featured-logo {
+  /* height: 3.2rem; */
+  width: 12rem;
+  /* TEMP below: Change brightness to 0 when good logos are found */
+  filter: brightness(0);
+  /* brightness 0 turns img to black */
+  opacity: 30%;
+  /* Img fades 50%, but seems like it's gray */
+  /* This is better than grayscale here cuz now the img has the uniform 'gray' color */
+}
+
+/* ************************ */
+/* FAVORITE DISHES SECTION (SLIDER SECTION) */
+/* ************************ */
+
+.section-fav-dishes {
+  padding: 9.6rem 0;
+  /* background-color: #762203; */
+}
+
+.sliders-container {
+  padding: 3.6rem 4.8rem;
+  /* background-color: #170700; */
+  /* background-image: linear-gradient(rgb(47, 13, 1, 0.5), rgb(23, 7, 0, 0.7)); */
+  background-image: linear-gradient(
+    rgb(255, 255, 255, 0.2),
+    rgb(239, 105, 55, 0.1),
+    rgb(255, 255, 255, 0.2)
+  );
+  /* max-height: 100vh; */
+  /* height: 90rem; */
+  height: 100vh;
+}
+
+/* Slider subsection */
+.sliders {
+  max-width: 130rem;
+  height: 100%;
+  width: auto;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 1%;
+  box-shadow: 0 2.4rem 4.8rem rgba(237, 55, 55, 0.1);
+
+  /* IN THE END */
+  overflow: hidden;
+}
+
+/* Each individual slide div (which contains an image) */
+.slide {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* height: 49rem; */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* THIS creates the animation! */
+  transition: transform 1s;
+}
+
+/* Each slide img */
+.slide > img {
+  /* Only for images that have different size than slide */
+  /* Below will adjust the imgs to fit 100% of the containing slide div */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Image Captions: To add later if needed */
+/* .slide-img-caption {
+  display: absolute;
+  top: 20;
+  left: 30;
+} */
+
+.slider__btn {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+
+  border: none;
+  background: rgba(255, 255, 255, 0.7);
+  font-family: inherit;
+  color: #333;
+  border-radius: 50%;
+  height: 5.5rem;
+  width: 5.5rem;
+  font-size: 3.25rem;
+  /* box-shadow: 0 2.4rem 4.8rem rgb(0 0 0 / 20%); */
+  cursor: pointer;
+  /* z-index: 3; */
+}
+
+.slider__btn__left {
+  left: 3%;
+  transform: translate(-50%, -50%);
+}
+
+.slider__btn__right {
+  right: 3%;
+  transform: translate(50%, -50%);
+}
+
+/*dots container*/
+.dots {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+/* Each individual dot */
+.dots__dot {
+  border: none;
+  background-color: #b9b9b9;
+  opacity: 0.7;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  margin-right: 1.75rem;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+/* Class to apply if dot is active */
+.dots__dot__active {
+  /* background-color: #fff; */
+  background-color: rgb(245, 240, 240);
+  opacity: 1;
+}
+
+/* ************************ */
+/* TESTIMONIALS SECTION */
+/* ************************ */
+
+.section-testimonials {
+  /* background-color: #fdeee7; */
+  padding: 9.6rem 0;
+}
+
+/* testimonials grid */
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 6rem;
+  align-items: stretch;
+  text-align: center;
+}
+
+/* Figure (testimonial card) */
+.testimonial {
+  background-color: rgb(251, 217, 205, 0.5);
+  padding: 6rem 3rem;
+  box-shadow: 0 0rem 2.4rem rgba(0, 0, 0, 0.015);
+  transition: all 0.4s;
+  overflow: hidden;
+  border-radius: 9px;
+}
+
+/* Add hover effect to element */
+.testimonial:hover {
+  /* translateY only moves the element in Y direction, negative means up */
+  transform: translateY(-1.2rem);
+  /* When element moves up, shadow should be bigger/darker, as it's closer to the 'light source' */
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
+}
+
+/* ul list of rating stars */
+.testimonial-rating-container {
+  display: flex;
+
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  margin-bottom: 2.4rem;
+}
+
+/* Headshots */
+.testimonial-img {
+  width: 9.6rem;
+  border-radius: 50%;
+  margin-bottom: 4.8rem;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+}
+
+/* ion icons */
+.testimonial-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+  color: #eb4305;
+}
+
+.testimonial-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 1.6rem;
+  text-align: left;
+  padding-left: 1.6rem;
+}
+.testimonial-name {
+  font-size: 1.6rem;
+  color: #6f6f6f;
+  text-align: right;
+  padding-right: 1.6rem;
+  margin-top: 2.2rem;
+}
+
+/* See more testimonials link */
+.all-testimonials {
+  margin-top: 4.8rem;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+/* ************************ */
+/* MENU STORIES SECTION */
+/* ************************ */
+
+.section-menu {
+  padding: 9.6rem 0;
+}
+
+.menu-story-box {
+  width: 90%;
+  /* background-color: #51cf66; */
+  /* padding-left: 2.8rem; */
+}
+
+/* menu title container, contains icon and title */
+.menu-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.4rem;
+}
+
+/* ion icon */
+.menu-icon {
+  height: 2.9rem;
+  width: 2.9rem;
+  color: #eb4305;
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
+  margin-left: -0.6rem;
+}
+
+.menu-story-description {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+/* tags box */
+.menu-tags {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 2.4rem;
+  margin-top: 2rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+
+  color: #333;
+  border-radius: 100px;
+  font-weight: 600;
+}
+
+.tag--pork {
+  background-color: #ff922b;
+}
+
+.tag--vegetable {
+  background-color: #51cf66;
+}
+
+.tag--carbo {
+  background-color: #f5d64b;
+}
+
+.menu-img-container {
+  overflow: hidden;
+  border-radius: 9px;
+  height: 100%;
+  width: 100%;
+  /* padding-left: 2.8rem; */
+}
+
+/* This is an empty div, so have to set height 100% to pop it open (100% means 100% of the grid cell's height) */
+.menu-img-box {
+  height: 100%;
+  justify-self: left;
+  align-self: start;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+
+  transition: all 0.4s;
+}
+
+.menu-img-box:hover {
+  transform: scale(1.1);
+}
+
+/* Use size, repeat, position 3 properties to ensure a non-repeated image is set as background centered */
+.menu-img-box-1 {
+  background-image: url("img/favdish1-2400-sq.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.menu-img-box-2 {
+  background-image: url("img/okura-2300-sq.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.menu-img-box-3 {
+  background-image: url("img/favdish6-2400-squooshed-again-ratio-fixed-sq.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* ************************ */
+/* FEATURES SECTION */
+/* ************************ */
+
+.section-features {
+  padding: 9.6rem 0;
+  /* background-color: #fdece6; */
+  /* background-color: #170700; */
+}
+
+.features-tabs {
+  /*contains tab and tab contents*/
+  max-width: 130rem;
+  /* height: 30rem; */
+  margin: 4.8rem auto 4.8rem auto;
+  /* background-color: #170700; */
+  /* background-color: #fdece6; */
+  background-image: linear-gradient(rgb(255, 255, 255, 0), rgb(253, 236, 230));
+  background-image: linear-gradient(
+    rgb(253, 236, 230, 0.5),
+    rgb(253, 236, 230, 0.9)
+  );
+  border-radius: 11px;
+  /* border-top: 2px solid rgba(23, 7, 0, 0.475); */
+}
+
+.tabs--container {
+  max-width: 90rem;
+  margin: 1.2rem auto 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 6rem;
+  justify-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  /* border-radius: 11px; */
+}
+
+.btn--tab {
+  display: inline-block;
+  border: none;
+  width: 100%;
+  transform: translateY(-50%);
+  padding: 1.2rem 2.4rem;
+  border-radius: 2.4rem;
+  cursor: pointer;
+  color: #222;
+  font-size: 2rem;
+  font-family: inherit;
+  font-weight: 450;
+  letter-spacing: 0.25px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.075);
+
+  background-color: #ddd;
+}
+
+.btn--tab:hover {
+  background-color: #ef6937;
+  color: #fff;
+}
+
+.btn--tab--active {
+  /* transform: translateY(-56%); */
+  background-color: #eb4305;
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.075);
+}
+
+/* By default, all tabs except the active tab are hidden */
+.tabs--content {
+  display: none;
+
+  margin: 4.8rem auto;
+  font-size: 1.7rem;
+  padding: 1rem 6.4rem 9.8rem 6.4rem;
+  border-radius: 11px;
+}
+
+.tabs--content--active {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 6rem;
+  /* color: #ddd; */
+  align-items: center;
+  justify-items: center;
+}
+
+/* container div for img */
+.tabs--image--container {
+  width: 90%;
+  height: auto;
+  /* height: 100%; */
+  /* display: flex;
+  align-items: center;
+  justify-items: center; */
+  /* margin: 4.8rem; */
+}
+
+.tabs--image {
+  width: 100%;
+  height: 100%;
+  /* max-height: 100%; */
+  border-radius: 9px;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+}
+
+/* Container for tab header and description */
+.tabs--content--text {
+  align-self: start;
+  padding: 1.8rem 5.2rem 1.8rem 2.2rem;
+}
+
+.tabs--content--header {
+  margin-bottom: 2.4rem;
+}
+
+.tabs__content__description {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+/* ************************ */
+/* MAP SECTION */
+/* ************************ */
+
+.section-map {
+  padding: 9.6rem 0;
+}
+
+/* Map container */
+.cta--map {
+  /* background-image: linear-gradient(to right bottom, #a52f04, #461401); */
+  border-radius: 9px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ************************ */
+/* CTA SECTION */
+/* ************************ */
+
+.section-cta {
+  /* top right bottom left */
+  padding: 9.6rem 0 12.8rem 0;
+}
+
+/* CTA container (text box and IMG) */
+.cta {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  background-color: #e8590c;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+  border-radius: 11px;
+  overflow: hidden;
+
+  color: #2e1202;
+
+  background-image: linear-gradient(to right bottom, #f6bd9e, #e8590c);
+}
+
+.cta-text-box {
+  padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+}
+
+.subheading--cta {
+  color: #d43c05;
+}
+
+/* Explicitly define margin-bottom: reduce it */
+.cta .heading-secondary {
+  /* Standard is 9.6rem, so reduce */
+  margin-bottom: 4.6rem;
+  /* Inherits cta-text-box text color */
+  color: inherit;
+}
+
+.cta-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 9.6rem;
+}
+
+.cta-img-box {
+  background-image: linear-gradient(
+      to right bottom,
+      rgb(246, 189, 158, 0.35),
+      rgb(232, 89, 12, 0.35)
+    ),
+    url("img/crab-700-squooshed.jpg");
+
+  background-size: cover;
+  /* background-position is useful when img is much larger than the container size, then top/bottom/center will set the img to be displaying in the limited container accordingly */
+  background-position: bottom;
+}
+
+/* Select the focus state of all elements under .cta */
+/* Below overwrites the focus state format in general (due to higher specificity) */
+.cta *:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.6rem rgba(253, 242, 233, 0.5);
+}
+
+/* ************************ */
+/* FOOTER SECTION */
+/* ************************ */
+
+/* Section footer */
+.footer {
+  padding: 12.8rem 0;
+  /* Light border for seperation from main section */
+  border-top: 1px solid #eee;
+
+  background-color: rgba(238, 238, 238, 0.3);
+}
+
+.grid--footer {
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+  column-gap: 4.8rem;
+}
+
+/* Logo column */
+.logo-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Logo img anchor */
+.footer-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  /* padding-top: 0.4rem; */
+}
+
+.footer-logo-name {
+  height: 7.5rem;
+}
+
+/* ul element for social icons */
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 2.4rem;
+  padding-top: 2rem;
+}
+
+/* ion icons */
+.social-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+/* copyright message */
+.copyright {
+  font-size: 1.4rem;
+  color: #767676;
+  line-height: 1.6;
+  /* NOTE: Below will move the flex item to the bottom of the flex container */
+  margin-top: auto;
+  padding-bottom: 3.4rem;
+}
+
+/* Footer headings */
+.footer-heading {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
+/* Address element: by default text is italic */
+.contacts {
+  /* Change italic back to normal font */
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.address-col,
+.nav-col {
+  padding: 4.7rem 0;
+}
+
+/* Actual address <p> */
+.address {
+  margin-bottom: 2.4rem;
+}
+
+/* ul element for footer links in nav col */
+.footer-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+/* footer link (anchor element inside li) */
+.footer-link:link,
+.footer-link:visited {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #767676;
+  transition: all 0.3s;
+}
+
+.footer-link:hover,
+.footer-link:active {
+  color: #555;
+}

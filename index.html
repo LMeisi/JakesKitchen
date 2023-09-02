@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Always Include this line for responsive design!! -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Meta description -->
+    <meta
+      name="description"
+      content="Jake's Kitchen is the most authentic asian cuisine in town. We have carefully-selected premium Chinese, Japanese, Thai, and Korean ethnic food options to choose from, guaranteed fresh and delicious!"
+    />
+
+    <!-- icon in title - 64 by 64 -->
+    <link rel="icon" href="img/favicon-64by64.jpg" />
+
+    <!-- icon for iOS homescreen as favorited website 180 by 180 -->
+    <link rel="apple-touch-icon" href="img/favicon-180by180.jpg" />
+
+    <!-- icon for Android homescreen as favorited website - create manifest.webmanifest file -->
+    <!-- NOTE in the manifest.webmanifest file, specify the imgs sizes as 512 by 512, and 192 by 192 -->
+    <link rel="manifest" href="manifest.webmanifest" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- css -->
+    <!-- OK to include multiple CSS files into one HTML -->
+    <link rel="stylesheet" href="general.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="queries.css" />
+
+    <!-- JavaScript -->
+    <script defer src="script.js"></script>
+
+    <!-- To enable smooth scrolling for safari, need below -->
+    <script
+      defer
+      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+    ></script>
+
+    <title>
+      Jake's Kitchen &mdash; The Most Authentic Asian Cuisine in Town!
+    </title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo-container">
+        <a href="#">
+          <img
+            class="logo-img"
+            alt="jake's kitchen logo"
+            src="img/logo2-img.PNG"
+          />
+        </a>
+        <a href="#">
+          <img
+            class="logo-name"
+            alt="jake's kitchen logo"
+            src="img/logo2-word.PNG"
+          />
+        </a>
+      </div>
+      <!-- main-nav will be changed in mobile navigation -->
+      <nav class="main-nav">
+        <ul class="main-nav-list">
+          <li>
+            <a href="#fav-dishes" class="main-nav-link">Favorite Dishes</a>
+          </li>
+
+          <li>
+            <a href="#testimonials" class="main-nav-link">Testimonials</a>
+          </li>
+          <li><a href="#menu" class="main-nav-link">Menu Stories</a></li>
+          <li>
+            <a href="#features" class="main-nav-link">Jake's Features</a>
+          </li>
+          <li><a href="#cta" class="main-nav-link nav-cta">Order Now</a></li>
+        </ul>
+      </nav>
+
+      <!-- Used for mobile screens -->
+      <!-- By default, below is hidden, only appear when media query hits mobile navigation width -->
+      <button class="btn-mobile-nav">
+        <!-- Two icons in the same button, but only one is shown at one time -->
+        <!-- 'name' is attribute -->
+        <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+        <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+      </button>
+    </header>
+
+    <main>
+      <!-- Section Front -->
+      <section class="section-front">
+        <!-- Container -->
+        <div class="front">
+          <span class="front-heading"><strong>Jakes' Kitchen</strong></span>
+          <h1 class="front-text">World Famous Authentic Asian Cuisine</h1>
+          <div class="front-btn-container">
+            <a href="#fav-dishes" class="btn btn--learn">Learn more</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Featured -->
+      <section class="section-featured">
+        <div class="container"></div>
+        <h2 class="heading-featured-in">As featured in</h2>
+        <div class="featured-logos">
+          <img
+            src="img/featured logos/facebook-5.svg"
+            class="featured-logo"
+            alt="facebook logo"
+          />
+          <img
+            src="img/featured logos/uber-eats.svg"
+            class="featured-logo"
+            alt="Food network logo"
+          />
+          <img
+            src="img/featured logos/instagram-1.svg"
+            class="featured-logo"
+            alt="Instagram logo"
+          />
+          <img
+            src="img/featured logos/grubhub-1.svg"
+            class="featured-logo"
+            alt="Food network logo"
+          />
+          <img
+            src="img/featured logos/doordash-logo.svg"
+            class="featured-logo"
+            alt="Food network logo"
+          />
+        </div>
+      </section>
+
+      <!-- Section Favorite Dishes (Slider) -->
+      <section class="section-fav-dishes" id="fav-dishes">
+        <!-- Heading segment -->
+        <!-- Center-text (helper function) the container and span/h2 element will also inherit the centered property for text -->
+        <div class="container center-text">
+          <span class="subheading">Favorite Dishes</span>
+          <h2 class="heading-secondary margin-bottom-md">
+            Check out our premium award-winning dishes
+          </h2>
+        </div>
+
+        <!-- Slider subsection -->
+        <!-- div that contains the sliders subsection -->
+        <div class="sliders-container">
+          <!-- The sliders subsection -->
+          <div class="sliders">
+            <div class="slide slide__1">
+              <img
+                class="slide__img__1"
+                src="img/favdish1-2400-sq.jpg"
+                alt="slide img"
+              />
+              <!-- <p class="slide-img-caption">Red Baked Meat</p> -->
+            </div>
+
+            <div class="slide slide__2">
+              <img
+                class="slide__img__2"
+                alt="slide img"
+                src="img/favdish2-2400-sq.jpg"
+              />
+            </div>
+
+            <div class="slide slide__3">
+              <img
+                class="slide__img__3"
+                alt="slide img"
+                src="img/favdish3-2400-sq.jpg"
+              />
+            </div>
+
+            <div class="slide slide__4">
+              <img
+                class="slide__img__4"
+                alt="slide img"
+                src="img/favdish8-2400-ratio-fixed-sqooshed-sq.jpg"
+              />
+            </div>
+
+            <div class="slide slide__5">
+              <img
+                class="slide__img__5"
+                alt="slide img"
+                src="img/favdish6-2400-squooshed-again-ratio-fixed-sq.jpg"
+              />
+            </div>
+
+            <!-- <div class="slide slide__6">
+              <img
+                class="slide__img__6"
+                src="img/favdish7-3400 - squooshed.jpg"
+              />
+            </div> -->
+
+            <!-- Slider buttons left/right -->
+            <button class="slider__btn slider__btn__left">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="btn-icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
+                />
+              </svg>
+            </button>
+            <button class="slider__btn slider__btn__right">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="btn-icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+
+            <!-- Slider dots -->
+            <div class="dots"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Testimonials -->
+      <section class="section-testimonials" id="testimonials">
+        <!-- Testimonial headings -->
+        <div class="container">
+          <span class="subheading">Testimonials</span>
+          <h2 class="heading-secondary">
+            Hear what customers have to say about us
+          </h2>
+        </div>
+
+        <!-- Testimonials content grid -->
+        <div class="container container--padding-up testimonials">
+          <!-- Individual testimonials for each figure -->
+          <!-- Figure 1 -->
+          <figure class="testimonial testimonial--1">
+            <!-- Testimonial img -->
+            <img
+              class="testimonial-img"
+              alt="Photo of customer"
+              src="img/Headshots/22.jpg"
+            />
+            <!-- Testimonial Rating -->
+            <ul class="testimonial-rating-container">
+              <li class="testimonial-icon-container">
+                <ion-icon class="testimonial-icon" name="star"></ion-icon>
+              </li>
+              <li class="testimonial-icon-container">
+                <ion-icon class="testimonial-icon" name="star"></ion-icon>
+              </li>
+              <li class="testimonial-icon-container">
+                <ion-icon class="testimonial-icon" name="star"></ion-icon>
+              </li>
+              <li class="testimonial-icon-container">
+                <ion-icon class="testimonial-icon" name="star"></ion-icon>
+              </li>
+              <li class="testimonial-icon-container">
+                <ion-icon class="testimonial-icon" name="star"></ion-icon>
+              </li>
+            </ul>
+            <!-- Testimonial text -->
+            <blockquote class="testimonial-text">
+              Jake's kitchen is my favorite local go-to restaurant. Whenever I
+              feel hungry, next thing I know, I'm already holding of a bowl of
+              Jake's popular dish.
+            </blockquote>
+            <!-- Testimonial name -->
+            <p class="testimonial-name">&mdash; David Smith</p>
+          </figure>
+
+          <!-- Figure 2 -->
+          <figure class="testimonial testimonial--2">
+            <!-- Testimonial img -->
+            <img
+              class="testimonial-img"
+              alt="Photo of customer"
+              src="img/Headshots/79.jpg"
+            />
+            <!-- Testimonial Rating -->
+            <ul class="testimonial-rating-container">
+              <li class="testimonial-icon-container">
+                <ion-icon class="testimonial-icon" name="star"></ion-icon>
+              </li>
+              <li class="testimonial-icon-container">
+                <ion-icon class="testimonial-icon" name="star"></ion-icon>
+              </li>
+              <li class="testimonial-icon-container">
+                <ion-icon class="testimonial-icon" name="star"></ion-icon>
+              </li>
+              <li class="testimonial-icon-container">
+                <ion-icon class="testimonial-icon" name="star"></ion-icon>
+              </li>
+              <li class="testimonial-icon-container">
+                <ion-icon class="testimonial-icon" name="star"></ion-icon>
+              </li>
+            </ul>
+            <!-- Testimonial text -->
+            <blockquote class="testimonial-text">
+              Whether I want to try sushi, dim sum, or pad thai, Jake's always
+              satisfies my needs. Jake's kitchen has the most amazing Asian food
+              variety.
+            </blockquote>
+            <!-- Testimonial name -->
+            <p class="testimonial-name">&mdash; Heather Golden</p>
+          </figure>
+
+          <!-- Figure 3 -->
+          <figure class="testimonial testimonial--3">
+            <!-- Testimonial img -->
+            <img
+              class="testimonial-img"
+              alt="Photo of customer"
+              src="img/Headshots/32.jpg"
+            />
+            <!-- Testimonial Rating -->
+            <ul class="testimonial-rating-container">
+              <li class="testimonial-icon-container">
+                <ion-icon class="testimonial-icon" name="star"></ion-icon>
+              </li>
+              <li class="testimonial-icon-container">
+                <ion-icon class="testimonial-icon" name="star"></ion-icon>
+              </li>
+              <li class="testimonial-icon-container">
+                <ion-icon class="testimonial-icon" name="star"></ion-icon>
+              </li>
+              <li class="testimonial-icon-container">
+                <ion-icon class="testimonial-icon" name="star"></ion-icon>
+              </li>
+              <li class="testimonial-icon-container">
+                <ion-icon class="testimonial-icon" name="star"></ion-icon>
+              </li>
+            </ul>
+            <!-- Testimonial text -->
+            <blockquote class="testimonial-text">
+              Hands down the best Asian food in town. Having lived in Asia for
+              half of my life, I have to say that if you want authentic asian,
+              look no further than Jake's Kitchen.
+            </blockquote>
+            <!-- Testimonial name -->
+            <p class="testimonial-name">&mdash; Adrian Petes</p>
+          </figure>
+        </div>
+
+        <!-- See Other Testimonials Segment -->
+        <div class="container all-testimonials">
+          <a href="#testimonials" class="link">See more testimonials &rarr;</a>
+        </div>
+      </section>
+
+      <!-- Section Menu Stories -->
+      <section class="section-menu" id="menu">
+        <!-- section heading -->
+        <div class="container">
+          <span class="subheading">Menu Stories</span>
+          <h2 class="heading-secondary">
+            Discover the stories behind our popular entrees
+          </h2>
+        </div>
+
+        <!-- Container for menu stories - Z Pattern -->
+        <div
+          class="container container--padding-up grid grid--2-cols grid--center-v row-gap-more"
+        >
+          <!-- Menu Story 1 -->
+          <!-- Menu Story 1 Container -->
+          <div class="menu-story-box">
+            <div class="menu-title">
+              <ion-icon class="menu-icon" name="flame"></ion-icon>
+              <h3 class="heading-tertiary margin-bottom-none">
+                Red Braised Pork
+              </h3>
+            </div>
+            <p class="menu-story-description">
+              Red Braised Pork originated from the Chinese province of Hunan,
+              but nowadays it is more associated with Shanghai. It is famous for
+              being a favorite dish of Mao Tse-tung, the founding father of
+              China, and it is often referred to as Chairman Mao's red braised
+              pork.
+            </p>
+
+            <div class="menu-tags">
+              <span class="tag tag--pork">Meat</span>
+              <span class="tag tag--vegetable">Vegetable</span>
+            </div>
+          </div>
+
+          <!-- Menu Story 1 - Image -->
+          <!-- NOTE: empty div, only background img (the div, or box, is the image, essentially)-->
+          <!-- NOTE: Make sure to add role and aria-babel for empty div -->
+          <div class="menu-img-container">
+            <div
+              class="menu-img-box menu-img-box-1"
+              role="img"
+              aria-label="menu img background"
+            ></div>
+          </div>
+
+          <!-- Menu Story 2 -->
+          <!-- Menu Story 2 - Image -->
+          <div class="menu-img-container menu-img-container-2">
+            <div
+              class="menu-img-box menu-img-box-2"
+              role="img"
+              aria-label="menu img background"
+            ></div>
+          </div>
+
+          <!-- Menu Story 2 Container -->
+          <div class="menu-story-box">
+            <div class="menu-title">
+              <ion-icon class="menu-icon" name="flame"></ion-icon>
+              <h3 class="heading-tertiary margin-bottom-none">
+                House Special Okra
+              </h3>
+            </div>
+            <p class="menu-story-description">
+              Okra first arrived in Japan via the United States during the Meiji
+              period, when Japan opened up to foreign trade in the late 19th
+              century. Our kitchen only imports the highest-grade fresh okra
+              from Japan and upon order, soak them in a house special sauce
+              marinade, bringing you a flavorful classic dish.
+            </p>
+
+            <div class="menu-tags">
+              <span class="tag tag--vegetable">Vegetable</span>
+            </div>
+          </div>
+
+          <!-- Menu Story 3 -->
+          <!-- Menu Story 3 Container -->
+          <div class="menu-story-box">
+            <div class="menu-title">
+              <ion-icon class="menu-icon" name="flame"></ion-icon>
+              <h3 class="heading-tertiary margin-bottom-none">
+                Yangchou Pearl Fried Rice
+              </h3>
+            </div>
+            <p class="menu-story-description">
+              Perhaps the most well-known dish of the city of Yangchou, China.
+              The recipe was invented by Qing China's Yi Bingshou (1754–1815)
+              and the dish was named Yangchou fried rice since Yi was once the
+              regional magistrate of Yangchou. It is often served with thousand
+              fish soup.
+            </p>
+
+            <div class="menu-tags">
+              <span class="tag tag--pork">Meat</span>
+              <span class="tag tag--vegetable">Vegetable</span>
+              <span class="tag tag--carbo">Rice</span>
+            </div>
+          </div>
+
+          <!-- Menu Story 3 - Image -->
+          <div class="menu-img-container">
+            <div
+              class="menu-img-box menu-img-box-3"
+              role="img"
+              aria-label="menu img background"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Jake's Features (Tab) -->
+      <section class="section-features" id="features">
+        <!-- Heading segment -->
+        <!-- Center-text (helper function) the container and span/h2 element will also inherit the centered property for text -->
+        <div class="container">
+          <span class="subheading">Jake's Features</span>
+          <h2 class="heading-secondary margin-bottom-hi">
+            Serving you and the local community
+          </h2>
+        </div>
+
+        <!-- Features Tabs -->
+        <div class="features-tabs">
+          <!-- Tabs -->
+          <div class="tabs--container">
+            <button class="btn--tab btn--tab--active" data-tab="1">
+              DINING
+            </button>
+            <button class="btn--tab" data-tab="2">CATERING</button>
+            <button class="btn--tab" data-tab="3">CHEF</button>
+            <button class="btn--tab" data-tab="4">COMMUNITY</button>
+          </div>
+
+          <!-- Tabs Content 1 -->
+          <div class="tabs--content tabs--content--1 tabs--content--active">
+            <div class="tabs--image--container">
+              <img
+                class="tabs--image"
+                alt="tab image"
+                src="img/feature-dining-1000-copy.jpg"
+              />
+            </div>
+            <div class="tabs--content--text">
+              <h3 class="tabs--content--header heading-tertiary-sm">
+                Award winning restaurant decor that provides unique experience
+              </h3>
+              <p class="tabs__content__description">
+                We understand that dining isn't just about food. So we go out of
+                our ways to create a dining experience that is like no other.
+                Designed by world-renowned stylist Ali Fahied, our Asian style
+                decorations create a unique stimulating and appetizing feel as
+                soon as you enter the door.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tabs Content 2 -->
+          <div class="tabs--content tabs--content--2">
+            <div class="tabs--image--container">
+              <img
+                class="tabs--image"
+                alt="tab image"
+                src="img/feature-catering-1000-fixed-ratio.jpg"
+              />
+            </div>
+            <div class="tabs--content--text">
+              <h3 class="tabs--content--header heading-tertiary-sm">
+                Need large orders and fast service? You can count on us!
+              </h3>
+              <p class="tabs__content__description">
+                Catering takes much more than preparing food. We know how
+                important it is to treat your guests with tasty food and great
+                service. Our seasoned catering staff will prepare and serve the
+                food of your choice in a refined manner, helping to support the
+                success of your event and your business.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tabs Content 3 -->
+          <div class="tabs--content tabs--content--3">
+            <div class="tabs--image--container">
+              <img
+                class="tabs--image"
+                alt="tab image"
+                src="img/feature-chef-1000-fixed-ratio.jpg"
+              />
+            </div>
+            <div class="tabs--content--text">
+              <h3 class="tabs--content--header heading-tertiary-sm">
+                Combined over 80 years of experience serving authentic Asian
+                cuisines
+              </h3>
+              <p class="tabs__content__description">
+                Our chef team, led by Master Chef Tsuyoshi Itoh, is wildly
+                passionate about food and cooking. With over a combined 80 years
+                of Asian food preparation experience, our chefs genuinely enjoy
+                the whole process of procuring, preparing, cooking and bringing
+                the best quality food to our customers.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tabs Content 4 -->
+          <div class="tabs--content tabs--content--4">
+            <div class="tabs--image--container">
+              <img
+                class="tabs--image"
+                alt="tab image"
+                src="img/feature-community-1000-fixed-ratio.jpg"
+              />
+            </div>
+            <div class="tabs--content--text">
+              <h3 class="tabs--content--header heading-tertiary-sm">
+                Helping the local community is a key part of our mission
+              </h3>
+              <p class="tabs__content__description">
+                Local community is the heart and soul of our business. We make
+                volunteer work, charitable donations, and participating in
+                community festivals and events a top priority of our business.
+                Our employees all live and work in the local communities, taking
+                pride in making our town a little nicer.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Map -->
+      <section class="section-map" id="map">
+        <!-- Pricing heading section -->
+        <div class="container center-text">
+          <span class="subheading">Location</span>
+          <h2 class="heading-secondary margin-bottom-himd">
+            Come visit us today!
+          </h2>
+        </div>
+
+        <!-- Map of restaurant -->
+        <div class="container container--map">
+          <div class="cta--map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26457.216006628074!2d-118.50091359721932!3d34.01430909461431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2a4d74d5ea79b%3A0xcd9a111aced18f4d!2sSanta%20Monica%20Pier!5e0!3m2!1sen!2sus!4v1669058439265!5m2!1sen!2sus"
+              width="100%"
+              height="500px"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Call to Action -->
+      <section class="section-cta" id="cta">
+        <!-- Container that contains CTA box (for padding purposes so CTA box is smaller) -->
+        <div class="container">
+          <!-- CTA container (text box and IMG) -->
+          <div class="cta">
+            <div class="cta-text-box">
+              <span class="subheading subheading--cta">Discount offer</span>
+              <h2 class="heading-secondary">$10 off your takeout order!</h2>
+              <p class="cta-text">
+                Get a taste of Jake's Kitchen at your fingertips. Just click
+                below to select your favorite dishes from our online menu and
+                enjoy $10 off your first online order!
+              </p>
+
+              <!-- Button to sign up -->
+              <div class="btn--cta--container">
+                <a href="#cta" class="btn btn--cta--order">Order now</a>
+              </div>
+            </div>
+
+            <!-- CTA IMG -->
+            <!-- This is an empty div, Img fills it; Img format is only visible in CSS, so have to specify in HTML what this element is/does by setting 'role' & 'aria-label', good practice to keep HTML code readable for all -->
+            <div
+              class="cta-img-box"
+              role="img"
+              aria-label="Customer enjoying food"
+            ></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Section Footer - ///UPDATED -->
+    <footer class="footer">
+      <div class="container grid grid--5-cols grid--footer">
+        <!-- Logo col: with social icons -->
+        <div class="logo-col">
+          <!-- Logo -->
+          <div class="footer-logo-container">
+            <a href="#">
+              <img
+                class="logo-img"
+                alt="jake's kitchen logo"
+                src="img/logo2-img.PNG"
+              />
+            </a>
+            <a href="#">
+              <img
+                class="footer-logo-name"
+                alt="jake's kitchen logo"
+                src="img/logo2-word-2line.PNG"
+              />
+            </a>
+          </div>
+          <!-- Social icons: Copy from ion icons-->
+          <ul class="social-links">
+            <li>
+              <a class="footer-link" href="http://instagram.com">
+                <ion-icon class="social-icon" name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a class="footer-link" href="http://www.facebook.com">
+                <ion-icon class="social-icon" name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a class="footer-link" href="http://twitter.com">
+                <ion-icon class="social-icon" name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Copyright message -->
+          <p class="copyright">
+            Copyright &copy; 2022 by Jake's Kitchen, LLC. All rights reserved.
+          </p>
+        </div>
+
+        <!-- Address col: use <address> element -->
+        <div class="address-col">
+          <p class="footer-heading">Contact us</p>
+          <!-- Address element: By default text is italic -->
+          <address class="contacts">
+            <p class="address">366 N. Grey St., Los Angeles, CA 91006</p>
+            <p>
+              <a class="footer-link" href="tel:626-211-5588">626-211-5588</a
+              ><br />
+              <a class="footer-link" href="mailto:hello@jakeskitchen.com"
+                >hello@jakeskitchen.com</a
+              >
+            </p>
+          </address>
+        </div>
+
+        <!-- Nav col 1 -->
+        <nav class="nav-col">
+          <p class="footer-heading">Account</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#">Create account</a></li>
+            <li><a class="footer-link" href="#">Sign in</a></li>
+            <li><a class="footer-link" href="#">iOS app</a></li>
+            <li><a class="footer-link" href="#">Android app</a></li>
+          </ul>
+        </nav>
+
+        <!-- Nav col 2 -->
+        <nav class="nav-col">
+          <p class="footer-heading">Company</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#">About us</a></li>
+            <li><a class="footer-link" href="#">For Business</a></li>
+            <li><a class="footer-link" href="#">Careers</a></li>
+          </ul>
+        </nav>
+
+        <!-- Nav col 3 -->
+        <nav class="nav-col">
+          <p class="footer-heading">Resources</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#">Recipe directory</a></li>
+            <li><a class="footer-link" href="#">Help center</a></li>
+            <li><a class="footer-link" href="#">Privacy & terms</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,788 @@
+/* By defaul 1 rem = 1 em = 16px */
+/* Use em for media query condition (1em=16px), but use rem (not necessarily = 16px) for formats inside the media queries */
+/* Rem inside media queries should be seen as the same rem size as in general.css/style.css */
+
+/* ************************ */
+/* BELOW  1366px (Smaller desktops) */
+/* ************************ */
+
+/* Use 1366px / 16 = 85em */
+@media (max-width: 85em) {
+  /* Below applies to whole page */
+  /* By changing html font-size, we change basically everything on the page */
+  html {
+    /* 9px / 16px = 56.25% */
+    font-size: 56.25%;
+  }
+}
+
+/* ************************ */
+/* BELOW  1200px (Landscape tablets) */
+/* ************************ */
+
+@media (max-width: 75em) {
+  /* Based on above and below, now column-gap is 4.8*9 px, row is 8.4*9 px */
+  .grid {
+    column-gap: 4.8rem;
+    row-gap: 8.8rem;
+  }
+
+  /* headings are still too large even with font-size reduced above, so reduce them further */
+  /* Note font-size already shrinked by above code */
+  .heading-secondary {
+    font-size: 3.6rem;
+  }
+
+  .heading-tertiary {
+    font-size: 2.4rem;
+  }
+
+  /* Make header padding smaller to align logo with sections (3.2rem padding) */
+  .header {
+    padding: 0 3.2rem;
+  }
+
+  /* Reduce nav item spaces */
+  .main-nav-list {
+    gap: 2.4rem;
+  }
+
+  .grid--footer {
+    column-gap: 3.2rem;
+  }
+}
+
+/* ************************ */
+/* BELOW  1120px (Tablets)  */
+/* ************************ */
+
+@media (max-width: 70em) {
+  html {
+    /* 8px / 16px = 50% */
+    font-size: 50%;
+  }
+
+  /* Reduce testimonial gaps so text can be shown more on the same line */
+  .testimonials {
+    gap: 4rem;
+  }
+}
+
+/* ************************ */
+/* BELOW  992px (Tablets)   ALSO ADDING MOBILE FORMATS!! */
+/* ************************ */
+
+@media (max-width: 62em) {
+  /* Make the top heading smaller */
+  .front-heading {
+    font-size: 2.4rem;
+  }
+
+  /* Make the top heading smaller */
+  .front-text {
+    font-size: 4rem;
+  }
+
+  /* Featured in logos reduce in size */
+  .featured-logo {
+    width: 10rem;
+  }
+
+  /* Reduce slider button side */
+  .slider__btn {
+    height: 4.5rem;
+    width: 4.5rem;
+  }
+
+  /* Make sure slidr__btn stays inside the images */
+  .slider__btn__left {
+    left: 5%;
+  }
+
+  .slider__btn__right {
+    right: 5%;
+  }
+
+  /* Make testimonials 4 columns */
+  /* Set first figure and second to first row, occupyiing 2 cells each */
+  /* The third figure occupies the middle two cells in the second row */
+  .testimonials {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .testimonial--1 {
+    grid-column: 1/3;
+  }
+
+  .testimonial--2 {
+    grid-column: 3/5;
+  }
+
+  .testimonial--3 {
+    grid-row: 2/3;
+    grid-column: 2/4;
+  }
+
+  /* Increase side padding for testimonial and menu sections so content isn't too much to the sides */
+  /* Original container padding is 3.2rem */
+  .container--padding-up {
+    padding: 0 4.8rem;
+  }
+
+  /* Reduce column gap of featured content */
+  .tabs--content--active {
+    column-gap: 3rem;
+  }
+
+  /* Changing the width ratio of the items, make img bigger */
+  .cta {
+    /* 3/5 = 60% 2/5 = 40% */
+    grid-template-columns: 5fr 4fr;
+  }
+
+  /* Reduce font size of cta secondary heading */
+  .cta .heading-secondary {
+    font-size: 3.4rem;
+  }
+
+  /* Change footer grid to 6 columns as top row needs 3 col and bottom only needs 2 */
+  /* Make top row's items span 2 cells each, and bottom row's items span 3 cells each */
+  .grid--footer {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  /* Move all 3 nav-columns in footer to the top grid row */
+  /* Set them to each span 2 grid cells (6 cells total) */
+  .nav-col {
+    grid-row: 1;
+    grid-column: span 2;
+    margin-bottom: 3.2rem;
+  }
+
+  /* Set logo and address columns to each span 3 grid cells (6 cells total) */
+  /* They are now on the second row */
+  .logo-col,
+  .address-col {
+    grid-column: span 3;
+  }
+
+  /* /////////////////////////////////// */
+  /* FOR MOBILE NAVIGATION */
+
+  /* menu button shows up */
+  .btn-mobile-nav {
+    display: block;
+  }
+
+  /* FOR MOBILE: Change main-nav bar to an expanded menu screen on the right size of screen and hidden, only activated by menu button click */
+  .main-nav {
+    background-color: #fff;
+
+    /* NOTE: Set parent element 'header' to relative, don't set body, if body is set as relative, effects might not work */
+    position: absolute;
+
+    /* Start element from viewport top left */
+    top: 0;
+    left: 0;
+    /* 100% viewport width */
+    width: 100%;
+    /* 100% viewport height, regardless of how you change viewport  (as long as width is <= 60em) */
+    height: 100vh;
+
+    /* Set the expanded nav to the side of the viewport (hidden and cannot be scrolled to) when media query applies */
+    /* Now if nav-open is added, the expanded nav will 'slide in' from the right side as transition was added */
+    /* Because in .nav-open .main-nav (below), transform: translate(0) is written */
+    transform: translateX(100%);
+
+    /* Centering the ul element (main-nav-list) by using flex */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Transition: ease in: first slow, then fast */
+    transition: all 0.5s ease-in;
+
+    /* Hide main-nav by default (meaning when media query applies as viewport shrinks), only appear upon menu button click */
+    /* ////Below DOESN"T ALLOW TRANSITION, don't use! */
+    /* ////display: none */
+
+    /* Correct way to hide w/o using display: none */
+    /* 1) Hide it visually */
+    opacity: 0;
+
+    /* 2) Make it unaccessible to keyboard/mouse */
+    pointer-events: none;
+
+    /* 3) Hide it from screen readers */
+    visibility: hidden;
+  }
+
+  /* Change the ul flex direction to column, restore the gap to 4.8 (now vertical) as previous query reduced the horizontal gap to 2.4rem */
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+
+  /* Enlarge the li items' font size */
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 3rem;
+  }
+
+  /* ! Below 3 'nav-open' formats will NOT apply to its child elements if 'nav-open' class isnt' present in HTML (which it isn't upon media query);  */
+  /* Basically: When media query applies, below syntax will be added, but nothing changes on screen; Only when 'nav-open' is added to 'header' element (by JS), then below format will be applied to .main-nav (i.e. expanded nav sliding in from right side), also the icons */
+
+  /* HTML: <header class="header nav-open"> */
+  /* IMPORTANT: If nav-open class is present (added) to header element (by JS), below format will be applied to header */
+  /*            If nav-open class is removed, below element cannot be found on the html, therefore, format won't apply */
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    /* Translate the expanded nav back to the original place to cover the viewport */
+    /* Now if nav-open is added, the nav will 'slide in' from the right side as transition was added */
+    transform: translate(0);
+  }
+
+  /* Show the 'X' sign when 'nav-open' class is added in HTML */
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+
+  /* Hide the 'menu' button when 'nav-open' class is added in HTML */
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+}
+
+/* ************************ */
+/* BELOW  896px (Smaller Tablets) 
+/* ************************ */
+
+@media (max-width: 56em) {
+  /* Reduce padding for cta text box, create more space */
+  .cta-text-box {
+    padding: 3.6rem 4rem 3.2rem 3.6rem;
+  }
+
+  /* Reduce tab content padding to create more space to fill text */
+  .tabs--content--text {
+    padding: 1.8rem 3.2rem 1.8rem 3.2rem;
+  }
+
+  /* Reduce bottom margin of tabs-content, also reduce top margin a little (previously 1rem) */
+  .tabs--content {
+    padding: 0rem 6.4rem 7.2rem 6.4rem;
+  }
+
+  /* Reduce column gap of featured content */
+  .tabs--content--active {
+    column-gap: 2rem;
+  }
+
+  /* Reduce tabs content description font size */
+  .tabs__content__description {
+    font-size: 1.6rem;
+  }
+
+  /* Reduce tabs content heading font size */
+  .heading-tertiary-sm {
+    font-size: 2.2rem;
+  }
+}
+
+/* ************************ */
+/* BELOW  800px (Smaller Tablets) 
+/* ************************ */
+
+/* Reduce heading-secondary margin */
+@media (max-width: 50em) {
+  /* Make content closer to heading */
+  .heading-secondary {
+    margin-bottom: 7.2rem;
+  }
+
+  .front-heading {
+    font-size: 2.2rem;
+  }
+
+  .front-text {
+    font-size: 3.6rem;
+  }
+
+  .heading-tertiary-sm {
+    font-size: 2.1rem;
+  }
+
+  /* Reduce learn button size */
+  .btn--learn:link,
+  .btn--learn:visited {
+    padding: 1.4rem 2.8rem;
+  }
+
+  /* Reduce sliders top bottom margin */
+  .sliders-container {
+    padding: 0rem 4.8rem;
+  }
+
+  /* Reduce column gap of grid */
+  .grid {
+    column-gap: 2.4rem;
+  }
+
+  /* Reduce btn--tab font */
+  .btn--tab {
+    font-size: 1.8rem;
+  }
+
+  /* Make the tabs move closer to center */
+  .tabs--container {
+    padding-left: 6rem;
+    padding-right: 6rem;
+    gap: 3rem;
+  }
+
+  .cta-text {
+    margin-bottom: 6.4rem;
+  }
+
+  /* For main-nav-list shown upon clicking the menu button, reduce gap */
+  .main-nav-list {
+    gap: 4.6rem;
+  }
+
+  /* Reduce font size of menu items */
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 2.6rem;
+  }
+}
+
+/* ************************ */
+/* BELOW  720px (Smaller Tablets)
+/*NOTE: Smaller tablets and Phones should have different queries if possible  */
+/*NOTE: But it depends on the situation; In this situation, once it's below 704px, all grids reduce to 1 col */
+/* ************************ */
+
+@media (max-width: 45em) {
+  /* Change all grids to 1 col */
+  .grid--2-cols {
+    grid-template-columns: 1fr;
+  }
+
+  /* Reduce the row gaps now, no more column gaps */
+  .grid {
+    row-gap: 4.8rem;
+  }
+
+  /* Featured in logos reduce in size */
+  .featured-logo {
+    width: 8.4rem;
+  }
+
+  /* Reduce font size */
+  .heading-secondary {
+    font-size: 3.2rem;
+  }
+
+  /* Reduce font size */
+  .front-heading {
+    font-size: 2rem;
+  }
+
+  /* Reduce font size */
+  .front-text {
+    font-size: 3.2rem;
+  }
+
+  /* Reduce font size of cta secondary heading */
+  .cta .heading-secondary {
+    font-size: 3.2rem;
+  }
+
+  .subheading {
+    font-size: 1.4rem;
+  }
+
+  /* Reduce btn font size */
+  .btn,
+  .btn:link,
+  .btn:visited {
+    font-size: 1.8rem;
+  }
+
+  /* Reduce learn button size */
+  .btn--learn:link,
+  .btn--learn:visited {
+    padding: 1.3rem 2.6rem;
+  }
+
+  /* Set img container height to show pic */
+  .menu-img-container {
+    height: 26rem;
+    width: 90%;
+    /* move img up a little so closer to the menu it belongs */
+    transform: translateY(-2.5rem);
+  }
+
+  /* Make the 2nd pic show after the 2nd text (row 4) */
+  .menu-img-container-2 {
+    grid-row: 4;
+  }
+
+  /* Reduce testimonials (grid) col to 1 */
+  /* Increase row gap cuz now there's no column gap */
+  .testimonials {
+    grid-template-columns: 1fr;
+    row-gap: 4.2rem;
+  }
+
+  /* Make sure the grid items all are in column 1 */
+  .testimonial--1 {
+    grid-column: 1;
+  }
+
+  .testimonial--2 {
+    grid-column: 1;
+  }
+
+  .testimonial--3 {
+    grid-column: 1;
+  }
+
+  /* Reduce btn--tab font */
+  .btn--tab {
+    font-size: 1.6rem;
+  }
+
+  /* Make the tabs move closer to center */
+  .tabs--container {
+    padding-left: 8rem;
+    padding-right: 8rem;
+    gap: 2rem;
+  }
+
+  /* Change the grid to single column */
+  .tabs--content--active {
+    grid-template-columns: 1fr;
+    gap: 3.6rem;
+  }
+
+  /* Reduce the image sizes */
+  .tabs--image--container {
+    width: 55%;
+  }
+
+  .container--map {
+    padding: 0 6.4rem;
+  }
+
+  /* Reduce cta width (keep top bottom same) */
+  .section-cta {
+    /* top right bottom left */
+    padding: 9.6rem 3.2rem 12.8rem 3.2rem;
+  }
+
+  /* Reduce cta to 1 col */
+  .cta {
+    grid-template-columns: 1fr;
+  }
+
+  /* Manually set img height, otherwise img disappears with 1 col */
+  .cta-img-box {
+    height: 28rem;
+    /* move img to top of cta form */
+    grid-row: 1;
+  }
+
+  /* Reduce font size */
+  .tag {
+    font-size: 1.1rem;
+  }
+
+  .footer {
+    padding: 9.6rem 0;
+  }
+
+  /* Reduce font size of menu items */
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 2.4rem;
+  }
+}
+
+/* ************************ */
+/* BELOW  592px  Smaller tablets & big phones; Typically this isn't needed, but for completeness sake here, I'll add it
+/* ************************ */
+@media (max-width: 37em) {
+  /* Reduce font size */
+  .heading-secondary {
+    font-size: 2.8rem;
+    margin-bottom: 4.4rem !important;
+  }
+
+  .section-features .heading-secondary {
+    margin-bottom: 7.4rem !important;
+  }
+
+  /* Reduce font size */
+  .front-heading {
+    font-size: 1.8rem;
+  }
+
+  /* Reduce font size */
+  .front-text {
+    font-size: 3rem;
+  }
+
+  /* Reduce font size of cta secondary heading */
+  .cta .heading-secondary {
+    font-size: 2.8rem;
+  }
+
+  .subheading {
+    font-size: 1.2rem;
+  }
+
+  .heading-tertiary {
+    font-size: 2.2rem;
+  }
+
+  .heading-tertiary-sm {
+    font-size: 2rem;
+  }
+
+  .cta-text {
+    font-size: 1.7rem;
+  }
+
+  /* Reduce font size of menu items */
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 2.2rem;
+  }
+}
+
+/* ************************ */
+/* BELOW  560px  For Phones  
+/* ************************ */
+@media (max-width: 35em) {
+  /* Reduce font size */
+  .heading-secondary {
+    font-size: 2.4rem;
+    margin-bottom: 4rem !important;
+  }
+
+  .section-features .heading-secondary {
+    margin-bottom: 6rem !important;
+  }
+
+  /* Reduce font size */
+  .front-heading {
+    font-size: 1.6rem;
+  }
+
+  /* Reduce font size */
+  .front-text {
+    font-size: 2.6rem;
+  }
+
+  /* Reduce font size of cta secondary heading */
+  .cta .heading-secondary {
+    font-size: 2.4rem;
+  }
+
+  /* Reduce font size */
+  .subheading {
+    font-size: 1rem;
+  }
+
+  /* Reduce font size */
+  .heading-tertiary {
+    font-size: 2rem;
+  }
+
+  /* Reduce font size */
+  .heading-tertiary-sm {
+    font-size: 1.8rem;
+  }
+
+  /* Reduce font size */
+  .testimonial-text {
+    font-size: 1.6rem;
+  }
+
+  /* Reduce font size */
+  .menu-story-description {
+    font-size: 1.6rem;
+  }
+
+  .tabs__content__description {
+    font-size: 1.6rem;
+  }
+
+  /* Reduce font size */
+  .tag {
+    font-size: 1rem;
+  }
+
+  /* Make the tabs move closer to center */
+  .tabs--container {
+    padding-left: 9rem;
+    padding-right: 9rem;
+    gap: 1.6rem;
+  }
+
+  .btn--tab {
+    font-size: 1.4rem;
+    padding: 0.8rem 1.6rem;
+  }
+
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 1.2rem 1.8rem;
+    font-size: 1.6rem;
+  }
+
+  .footer-heading {
+    font-size: 1.6rem;
+  }
+
+  .footer-link:link,
+  .footer-link:visited {
+    font-size: 1.4rem;
+  }
+
+  .cta-text {
+    font-size: 1.6rem;
+  }
+
+  /* Reduce font size of menu items */
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 2rem;
+  }
+}
+
+/* ************************ */
+/* FIXING Safari flexbox gap 
+/* ************************ */
+
+/* Since some Safari browsers don't support gap property for flexbox, we have to manually add the gap properties to the flexboxes in the code */
+/* If browser support not found for flexbox gap, below code will be added; The control is in Javascript */
+/* NOTE: pre-written code was added in JS to add 'no-flexbox-gap' class to 'body' element when code run in safari */
+/* NOTE: Have to make sure the margin for each element below matches with the margin in the actual CSS properties */
+/* NOTE: OK to add media queries again (same width) */
+/* NOTE: Below gap should be added to all elements that are not the last element of the flex container, so no gap added after the last element */
+
+/* How to add: check all the 'gap' of all css properties, focus on the flexbox containers only, and add the margins accordingly to the flexbox's child elements (except the last element) */
+/* How to adjust media queries.part 1: Check all gaps in queries.css, anytime there's a gap newly defined in queries, you have to set that breakpoint and adjust the margin-right for that particular breakpoint */
+/* How to adjust media queries.part 2: Check all gaps and see if flex direction changes from horizontal to vertical at certain breakpoints, If so, then add media query at that breakpoint, and reset the margin-right to 0, and set margin-bottom to the flex-box gap width */
+
+.no-flexbox-gap .header .logo-img {
+  margin-right: 1rem;
+}
+
+.no-flexbox-gap .main-nav-list li:not(:last-child) {
+  margin-right: 3.2rem;
+}
+
+.no-flexbox-gap .testimonial:not(:last-child) {
+  margin-right: 6rem;
+}
+
+.no-flexbox-gap .testimonial-icon-container:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.no-flexbox-gap .menu-icon {
+  margin-right: 1rem;
+}
+
+.no-flexbox-gap .tag:not(:last-child) {
+  margin-right: 0.4rem;
+}
+
+.no-flexbox-gap .btn--tab:not(:last-child) {
+  margin-right: 6rem;
+}
+
+.no-flexbox-gap .footer .logo-img {
+  margin-right: 0.6rem;
+}
+
+.no-flexbox-gap .social-links li:not(:last-child) {
+  margin-right: 2.4rem;
+}
+
+.no-flexbox-gap .footer-nav li:not(:last-child) {
+  margin-right: 2.4rem;
+}
+
+/* Check all gaps in the queries.css */
+/* Not changing column-gap as Safari is able to read it, but not row-gaps */
+
+/* NOTE: Not adjusting 'row-gap' or 'column-gap' properties, especially for grids, as unsure if Safari supports them */
+
+/* Main-nav-list gap reduction */
+@media (max-width: 75em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 2.4rem;
+  }
+}
+
+/* Testimonials gap reduction */
+@media (max-width: 70em) {
+  .no-flexbox-gap .testimonial:not(:last-child) {
+    margin-right: 4rem;
+  }
+}
+
+/* Main-nav-list changed flex direction for mobile button click */
+@media (max-width: 62em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 0rem;
+    margin-bottom: 4.8rem;
+  }
+}
+
+@media (max-width: 50em) {
+  /* tabs--container reduced gap */
+  .no-flexbox-gap .btn--tab:not(:last-child) {
+    margin-right: 3rem;
+  }
+
+  /* main-nav-list reduce gap */
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-bottom: 4.6rem;
+  }
+}
+
+@media (max-width: 45em) {
+  /* tabs--container reduced gap */
+  .no-flexbox-gap .btn--tab:not(:last-child) {
+    margin-right: 2rem;
+  }
+
+  /* For tabs--content--active: upon activation, now container only has one column */
+  /* ??Unsure if grid gap already works in Safari; if so, no need below */
+  .tabs--image--container {
+    margin-bottom: 3.6rem;
+  }
+}
+
+@media (max-width: 35em) {
+  /* tabs--container reduced gap */
+  .no-flexbox-gap .btn--tab:not(:last-child) {
+    margin-right: 1.6rem;
+  }
+}
+
+/* 
+- Font sizes
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98 
+
+- Spacing system 
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 72 / 80 / 96 / 128  
+*/
