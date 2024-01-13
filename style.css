@@ -181,7 +181,7 @@
 /* ************************ */
 
 .section-featured {
-  padding: 4.8rem 0 3.2rem 0;
+  padding: 4.8rem 0 6rem 0;
 }
 
 /* "As featured in" */
@@ -224,7 +224,10 @@
 }
 
 .sliders-container {
-  padding: 3.6rem 4.8rem;
+  padding-top: 3.6rem;
+  padding-bottom: 0;
+  padding-left: 4.8rem;
+  padding-right: 4.8rem;
   /* background-color: #170700; */
   /* background-image: linear-gradient(rgb(47, 13, 1, 0.5), rgb(23, 7, 0, 0.7)); */
   background-image: linear-gradient(
@@ -553,7 +556,7 @@
   /*contains tab and tab contents*/
   max-width: 130rem;
   /* height: 30rem; */
-  margin: 4.8rem auto 4.8rem auto;
+  margin: 4.8rem auto 0rem auto;
   /* background-color: #170700; */
   /* background-color: #fdece6; */
   background-image: linear-gradient(rgb(255, 255, 255, 0), rgb(253, 236, 230));
@@ -613,7 +616,7 @@
 .tabs--content {
   display: none;
 
-  margin: 4.8rem auto;
+  margin: 4.8rem auto 0rem auto;
   font-size: 1.7rem;
   padding: 1rem 6.4rem 9.8rem 6.4rem;
   border-radius: 11px;
@@ -624,7 +627,8 @@
   grid-template-columns: 1fr 1fr;
   column-gap: 6rem;
   /* color: #ddd; */
-  align-items: center;
+  /* align-items: center; */
+  align-items: start;
   justify-items: center;
 }
 
@@ -650,7 +654,8 @@
 /* Container for tab header and description */
 .tabs--content--text {
   align-self: start;
-  padding: 1.8rem 5.2rem 1.8rem 2.2rem;
+  /* padding: 1.8rem 5.2rem 1.8rem 2.2rem; */
+  padding: 0rem 5.2rem 1.8rem 2.2rem;
 }
 
 .tabs--content--header {
@@ -752,7 +757,7 @@
 
 /* Section footer */
 .footer {
-  padding: 12.8rem 0;
+  padding: 9.6rem 0;
   /* Light border for seperation from main section */
   border-top: 1px solid #eee;
 
@@ -798,11 +803,11 @@
 
 /* copyright message */
 .copyright {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: #767676;
   line-height: 1.6;
   /* NOTE: Below will move the flex item to the bottom of the flex container */
-  margin-top: auto;
+  margin-top: 5.9rem;
   padding-bottom: 3.4rem;
 }
 
@@ -821,9 +826,14 @@
   line-height: 1.6;
 }
 
-.address-col,
+.address-col {
+  padding: 4.7rem 0;
+}
+
 .nav-col {
   padding: 4.7rem 0;
+  justify-self: end;
+  text-align: end;
 }
 
 /* Actual address <p> */

@@ -62,9 +62,21 @@
     font-size: 50%;
   }
 
+  .section-content {
+    padding-top: 8.4rem;
+  }
+
   /* Reduce testimonial gaps so text can be shown more on the same line */
   .testimonials {
     gap: 4rem;
+  }
+
+  .heading-secondary {
+    margin-bottom: 8.4rem;
+  }
+
+  .margin-bottom-md {
+    margin-bottom: 4.8rem !important;
   }
 }
 
@@ -73,6 +85,10 @@
 /* ************************ */
 
 @media (max-width: 62em) {
+  .section-content {
+    padding-top: 7.6rem;
+  }
+
   /* Make the top heading smaller */
   .front-heading {
     font-size: 2.4rem;
@@ -145,10 +161,18 @@
     font-size: 3.4rem;
   }
 
+  .footer {
+    padding: 9.6rem 0;
+  }
+
   /* Change footer grid to 6 columns as top row needs 3 col and bottom only needs 2 */
   /* Make top row's items span 2 cells each, and bottom row's items span 3 cells each */
   .grid--footer {
     grid-template-columns: repeat(6, 1fr);
+  }
+
+  .footer-heading {
+    margin-bottom: 3.6rem;
   }
 
   /* Move all 3 nav-columns in footer to the top grid row */
@@ -156,14 +180,42 @@
   .nav-col {
     grid-row: 1;
     grid-column: span 2;
-    margin-bottom: 3.2rem;
+    margin-bottom: 0rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    justify-self: center;
+    text-align: center;
   }
 
   /* Set logo and address columns to each span 3 grid cells (6 cells total) */
   /* They are now on the second row */
-  .logo-col,
+  .logo-col {
+    grid-row: 3;
+    grid-column: span 6;
+    justify-self: center;
+    text-align: center;
+  }
+
   .address-col {
-    grid-column: span 3;
+    grid-row: 2;
+    grid-column: span 6;
+    padding-top: 0;
+    padding-bottom: 0;
+    justify-self: center;
+    text-align: center;
+  }
+
+  .footer-logo-container {
+    justify-content: center;
+  }
+
+  .social-links {
+    justify-content: center;
+    padding-top: 2.4rem;
+  }
+
+  .copyright {
+    margin-top: 2.4rem;
   }
 
   /* /////////////////////////////////// */
@@ -267,7 +319,7 @@
 
   /* Reduce tab content padding to create more space to fill text */
   .tabs--content--text {
-    padding: 1.8rem 3.2rem 1.8rem 3.2rem;
+    padding: 0rem 3.2rem 1.8rem 3.2rem;
   }
 
   /* Reduce bottom margin of tabs-content, also reduce top margin a little (previously 1rem) */
@@ -281,13 +333,13 @@
   }
 
   /* Reduce tabs content description font size */
-  .tabs__content__description {
+  /* .tabs__content__description {
     font-size: 1.6rem;
-  }
+  } */
 
   /* Reduce tabs content heading font size */
   .heading-tertiary-sm {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
   }
 }
 
@@ -297,9 +349,17 @@
 
 /* Reduce heading-secondary margin */
 @media (max-width: 50em) {
+  .section-content {
+    padding-top: 7.2rem;
+  }
+
   /* Make content closer to heading */
   .heading-secondary {
     margin-bottom: 7.2rem;
+  }
+
+  .margin-bottom-md {
+    margin-bottom: 7.2rem !important;
   }
 
   .front-heading {
@@ -311,7 +371,7 @@
   }
 
   .heading-tertiary-sm {
-    font-size: 2.1rem;
+    font-size: 2.3rem;
   }
 
   /* Reduce learn button size */
@@ -417,10 +477,19 @@
     padding: 1.3rem 2.6rem;
   }
 
+  .container-menu {
+    justify-items: center;
+    row-gap: 3.8rem;
+  }
+
+  .menu-story-box {
+    width: 100%;
+  }
+
   /* Set img container height to show pic */
   .menu-img-container {
     height: 26rem;
-    width: 90%;
+    /* width: 90%; */
     /* move img up a little so closer to the menu it belongs */
     transform: translateY(-2.5rem);
   }
@@ -462,15 +531,29 @@
     gap: 2rem;
   }
 
+  .margin-bottom-hi {
+    margin-bottom: 9.6rem !important;
+  }
+
   /* Change the grid to single column */
   .tabs--content--active {
     grid-template-columns: 1fr;
-    gap: 3.6rem;
+    gap: 2.4rem;
+    justify-items: center;
   }
 
   /* Reduce the image sizes */
   .tabs--image--container {
-    width: 55%;
+    width: 80%;
+  }
+
+  .tabs--content {
+    margin-top: 3.8rem;
+    justify-items: center;
+  }
+
+  .tabs--content--text {
+    padding: 1.8rem 3.2rem 1.8rem 3.2rem;
   }
 
   .container--map {
@@ -504,10 +587,22 @@
     padding: 9.6rem 0;
   }
 
+  .grid--footer {
+    row-gap: 6rem;
+  }
+
   /* Reduce font size of menu items */
   .main-nav-link:link,
   .main-nav-link:visited {
     font-size: 2.4rem;
+  }
+
+  .social-links {
+    padding-top: 2rem;
+  }
+
+  .copyright {
+    margin-top: 2rem;
   }
 }
 
@@ -515,6 +610,14 @@
 /* BELOW  592px  Smaller tablets & big phones; Typically this isn't needed, but for completeness sake here, I'll add it
 /* ************************ */
 @media (max-width: 37em) {
+  .section-content {
+    padding-top: 4.4rem;
+    padding-bottom: 6rem;
+  }
+  /* .section-featured {
+    padding-bottom: 4.8rem;
+  } */
+
   /* Reduce font size */
   .heading-secondary {
     font-size: 2.8rem;
@@ -549,7 +652,7 @@
   }
 
   .heading-tertiary-sm {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .cta-text {
@@ -560,6 +663,36 @@
   .main-nav-link:link,
   .main-nav-link:visited {
     font-size: 2.2rem;
+  }
+
+  .container-menu {
+    row-gap: 3rem;
+  }
+
+  .menu-title {
+    margin-bottom: 1.8rem;
+  }
+
+  .menu-tags {
+    margin-bottom: 1.6rem;
+    margin-top: 1.6rem;
+  }
+
+  .margin-bottom-hi {
+    margin-bottom: 9.2rem !important;
+  }
+
+  .tabs--content {
+    margin-top: 3.3rem;
+    padding-bottom: 5.6rem;
+  }
+
+  .tabs--content--active {
+    gap: 2.2rem;
+  }
+
+  .tabs--content--header {
+    margin-bottom: 2rem;
   }
 }
 
@@ -604,7 +737,7 @@
 
   /* Reduce font size */
   .heading-tertiary-sm {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   /* Reduce font size */
@@ -645,15 +778,6 @@
     font-size: 1.6rem;
   }
 
-  .footer-heading {
-    font-size: 1.6rem;
-  }
-
-  .footer-link:link,
-  .footer-link:visited {
-    font-size: 1.4rem;
-  }
-
   .cta-text {
     font-size: 1.6rem;
   }
@@ -662,6 +786,161 @@
   .main-nav-link:link,
   .main-nav-link:visited {
     font-size: 2rem;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 6rem 0;
+  }
+
+  .grid--footer {
+    row-gap: 4.8rem;
+  }
+
+  .footer-heading {
+    margin-bottom: 3rem;
+    font-size: 1.7rem;
+  }
+
+  .footer-link:link,
+  .footer-link:visited {
+    font-size: 1.6rem;
+  }
+
+  /* .logo-col {
+    grid-row: 3;
+    grid-column: span 6;
+  }
+
+  .address-col {
+    grid-row: 2;
+    grid-column: span 6;
+
+    padding-top: 0;
+    padding-bottom: 0.8rem;
+  } */
+
+  .nav-col {
+    padding-top: 0;
+    padding-bottom: 0.8rem;
+  }
+
+  .nav-col-account {
+    grid-row: 1;
+    grid-column: span 6;
+  }
+
+  .nav-col-company {
+    grid-row: 2;
+    grid-column: span 6;
+  }
+
+  .nav-col-resources {
+    grid-row: 3;
+    grid-column: span 6;
+  }
+
+  .logo-col {
+    grid-row: 5;
+  }
+
+  .address-col {
+    grid-row: 4;
+    padding-top: 0;
+    padding-bottom: 0.8rem;
+  }
+
+  /* .social-links {
+    padding-top: 1.9rem;
+  }
+
+  .copyright {
+    margin-top: 1.9rem;
+  } */
+}
+
+/* ************************ */
+/* BELOW  512px  For Phones  
+/* ************************ */
+
+/* 512 / 16 = 32 */
+@media (max-width: 32em) {
+  .section-content {
+    padding-top: 3.2rem;
+  }
+
+  .featured-logo {
+    width: 7rem;
+  }
+
+  /* Make the tabs move closer to center */
+  .tabs--container {
+    /* padding-left: 12rem; */
+    /* padding-right: 12rem; */
+    gap: 0.8rem;
+  }
+
+  /* Reduce font size */
+  .heading-tertiary-sm {
+    font-size: 1.9rem;
+  }
+
+  .btn--tab {
+    font-size: 1.15rem;
+    padding: 0.6rem 0.7rem;
+  }
+
+  .menu-title {
+    margin-bottom: 1.6rem;
+  }
+
+  .menu-tags {
+    margin-bottom: 1.4rem;
+    margin-top: 1.4rem;
+  }
+
+  .margin-bottom-hi {
+    margin-bottom: 8.6rem !important;
+  }
+
+  .tabs--image--container {
+    width: 90%;
+  }
+
+  .tabs--content {
+    margin-top: 2.8rem;
+    padding-bottom: 4.4rem;
+  }
+
+  .tabs--content--active {
+    gap: 1.2rem;
+  }
+
+  .tabs--content--header {
+    margin-bottom: 1.6rem;
+  }
+
+  .nav-col-account {
+    grid-row: 1;
+    grid-column: span 6;
+  }
+
+  .nav-col-company {
+    grid-row: 2;
+    grid-column: span 6;
+  }
+
+  .nav-col-resources {
+    grid-row: 3;
+    grid-column: span 6;
+  }
+
+  .logo-col {
+    grid-row: 5;
+  }
+
+  .address-col {
+    grid-row: 4;
   }
 }
 
@@ -763,12 +1042,6 @@
   /* tabs--container reduced gap */
   .no-flexbox-gap .btn--tab:not(:last-child) {
     margin-right: 2rem;
-  }
-
-  /* For tabs--content--active: upon activation, now container only has one column */
-  /* ??Unsure if grid gap already works in Safari; if so, no need below */
-  .tabs--image--container {
-    margin-bottom: 3.6rem;
   }
 }
 

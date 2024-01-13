@@ -142,7 +142,7 @@
       </section>
 
       <!-- Section Favorite Dishes (Slider) -->
-      <section class="section-fav-dishes" id="fav-dishes">
+      <section class="section-fav-dishes section-content" id="fav-dishes">
         <!-- Heading segment -->
         <!-- Center-text (helper function) the container and span/h2 element will also inherit the centered property for text -->
         <div class="container center-text">
@@ -246,9 +246,9 @@
       </section>
 
       <!-- Section Testimonials -->
-      <section class="section-testimonials" id="testimonials">
+      <section class="section-testimonials section-content" id="testimonials">
         <!-- Testimonial headings -->
-        <div class="container">
+        <div class="container center-text">
           <span class="subheading">Testimonials</span>
           <h2 class="heading-secondary">
             Hear what customers have to say about us
@@ -374,9 +374,9 @@
       </section>
 
       <!-- Section Menu Stories -->
-      <section class="section-menu" id="menu">
+      <section class="section-menu section-content" id="menu">
         <!-- section heading -->
-        <div class="container">
+        <div class="container center-text">
           <span class="subheading">Menu Stories</span>
           <h2 class="heading-secondary">
             Discover the stories behind our popular entrees
@@ -385,7 +385,7 @@
 
         <!-- Container for menu stories - Z Pattern -->
         <div
-          class="container container--padding-up grid grid--2-cols grid--center-v row-gap-more"
+          class="container container-menu container--padding-up grid grid--2-cols grid--center-v row-gap-more"
         >
           <!-- Menu Story 1 -->
           <!-- Menu Story 1 Container -->
@@ -488,10 +488,10 @@
       </section>
 
       <!-- Section Jake's Features (Tab) -->
-      <section class="section-features" id="features">
+      <section class="section-features section-content" id="features">
         <!-- Heading segment -->
         <!-- Center-text (helper function) the container and span/h2 element will also inherit the centered property for text -->
-        <div class="container">
+        <div class="container center-text">
           <span class="subheading">Jake's Features</span>
           <h2 class="heading-secondary margin-bottom-hi">
             Serving you and the local community
@@ -606,7 +606,7 @@
       </section>
 
       <!-- Section Map -->
-      <section class="section-map" id="map">
+      <section class="section-map section-content" id="map">
         <!-- Pricing heading section -->
         <div class="container center-text">
           <span class="subheading">Location</span>
@@ -632,7 +632,7 @@
       </section>
 
       <!-- Section Call to Action -->
-      <section class="section-cta" id="cta">
+      <section class="section-cta section-content" id="cta">
         <!-- Container that contains CTA box (for padding purposes so CTA box is smaller) -->
         <div class="container">
           <!-- CTA container (text box and IMG) -->
@@ -716,7 +716,10 @@
           <p class="footer-heading">Contact us</p>
           <!-- Address element: By default text is italic -->
           <address class="contacts">
-            <p class="address">366 N. Grey St., Los Angeles, CA 91006</p>
+            <p class="address">
+              366 N. Grey St.<br />
+              Los Angeles, CA 91006
+            </p>
             <p>
               <a class="footer-link" href="tel:626-211-5588">626-211-5588</a
               ><br />
@@ -728,33 +731,32 @@
         </div>
 
         <!-- Nav col 1 -->
-        <nav class="nav-col">
+        <nav class="nav-col nav-col-account">
           <p class="footer-heading">Account</p>
           <ul class="footer-nav">
-            <li><a class="footer-link" href="#">Create account</a></li>
             <li><a class="footer-link" href="#">Sign in</a></li>
-            <li><a class="footer-link" href="#">iOS app</a></li>
-            <li><a class="footer-link" href="#">Android app</a></li>
+            <li><a class="footer-link" href="#">Register</a></li>
+            <li><a class="footer-link" href="#">FAQ</a></li>
           </ul>
         </nav>
 
         <!-- Nav col 2 -->
-        <nav class="nav-col">
+        <nav class="nav-col nav-col-company">
           <p class="footer-heading">Company</p>
           <ul class="footer-nav">
             <li><a class="footer-link" href="#">About us</a></li>
-            <li><a class="footer-link" href="#">For Business</a></li>
+            <li><a class="footer-link" href="#">Partners</a></li>
             <li><a class="footer-link" href="#">Careers</a></li>
           </ul>
         </nav>
 
         <!-- Nav col 3 -->
-        <nav class="nav-col">
+        <nav class="nav-col nav-col-resources">
           <p class="footer-heading">Resources</p>
           <ul class="footer-nav">
             <li><a class="footer-link" href="#">Recipe directory</a></li>
-            <li><a class="footer-link" href="#">Help center</a></li>
             <li><a class="footer-link" href="#">Privacy & terms</a></li>
+            <li><a class="footer-link" href="#">Help center</a></li>
           </ul>
         </nav>
       </div>
